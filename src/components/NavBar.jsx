@@ -2,7 +2,13 @@ import Link from "next/link";
 import React from "react";
 import Logo from "./Logo";
 import { useRouter } from "next/router";
-import { GithubIcon, InstaIcon, LinkedInIcon, TwitterIcon, WhatsappIcon } from "./Icons";
+import {
+    GithubIcon,
+    InstaIcon,
+    LinkedInIcon,
+    TwitterIcon,
+    WhatsappIcon,
+} from "./Icons";
 import { motion } from "framer-motion";
 
 const CustomLink = ({ href, title, className }) => {
@@ -46,8 +52,8 @@ const NavBar = () => {
                 <motion.a
                     href="https://www.linkedin.com/in/fernando-henrique-sousa-teixeira/"
                     target={"_blank"}
-                    whileHover={{y: -6}}
-                    whileTap={{scale:0.9}}
+                    whileHover={{ y: -6 }}
+                    whileTap={{ scale: 0.9 }}
                     className="w-6 mr-3"
                 >
                     <LinkedInIcon />
@@ -55,29 +61,38 @@ const NavBar = () => {
                 <motion.a
                     href="https://github.com/marlobrado"
                     target={"_blank"}
-                    whileHover={{y: -6}}
-                    whileTap={{scale:0.9}}
-                    className="w-6 mr-3"
+                    whileHover={{ y: -6 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-6 mx-3"
                 >
                     <GithubIcon />
                 </motion.a>
-                <motion.a href="https://twitter.com/" target={"_blank"}
-                whileHover={{y: -6}}
-                whileTap={{scale:0.9}}
-                className="w-6 mr-3">
+                <motion.a
+                    href="https://twitter.com/"
+                    target={"_blank"}
+                    whileHover={{ y: -6 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-6 mx-3"
+                >
                     <TwitterIcon />
                 </motion.a>
-                <motion.a href="https://www.instagram.com/" target={"_blank"}
-                whileHover={{y: -6}}
-                whileTap={{scale:0.9}}
-                className="w-6 mr-3">
-                    <InstaIcon/>
+                <motion.a
+                    href="https://www.instagram.com/"
+                    target={"_blank"}
+                    whileHover={{ y: -6 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-6 mx-3"
+                >
+                    <InstaIcon />
                 </motion.a>
-                <motion.a href='https://wa.me/+5562981540735' target={"_blank"}
-                whileHover={{y: -6}}
-                whileTap={{scale:0.9}}
-                className="w-6 mr-3">
-                    <WhatsappIcon/>
+                <motion.a
+                    href="https://wa.me/+5562981540735"
+                    target={"_blank"}
+                    whileHover={{ y: -6 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-6 ml-3"
+                >
+                    <WhatsappIcon />
                 </motion.a>
             </nav>
             <div className="absolute left-[50%] top-2 translate-x-[-50%]">
