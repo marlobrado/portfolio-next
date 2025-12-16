@@ -25,9 +25,7 @@ export default function Home() {
             </div>
             <div className="w-1/2 flex flex-col items-center self-center">
               <AnimatedText text={userData.animatedText} className="!text-6xl !text-left" />
-              <p className="my-4 text-base font-medium">
-                {userData.homeSubtitle}
-              </p>
+              <p className="my-4 text-base font-medium">{userData.homeSubtitle}</p>
               <div className="flex items-center self-start mt-2">
                 <Link
                   href="/Curriculo Fernando.pdf"

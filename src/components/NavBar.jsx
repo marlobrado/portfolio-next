@@ -45,16 +45,40 @@ const NavBar = () => {
         >
           <LinkedInIcon />
         </motion.a>
-        <motion.a href={`https://github.com/${userData.gitHubUsername}`} target={'_blank'} whileHover={{ y: -6 }} whileTap={{ scale: 0.9 }} className={`w-6 mx-3 ${userData.gitHubUsername == '' ? 'hidden' : ''}`}>
+        <motion.a
+          href={`https://github.com/${userData.gitHubUsername}`}
+          target={'_blank'}
+          whileHover={{ y: -6 }}
+          whileTap={{ scale: 0.9 }}
+          className={`w-6 mx-3 ${userData.gitHubUsername == '' ? 'hidden' : ''}`}
+        >
           <GithubIcon />
         </motion.a>
-        <motion.a href={`https://twitter.com/${userData.twitterUser}`} target={'_blank'} whileHover={{ y: -6 }} whileTap={{ scale: 0.9 }}  className={`w-6 mx-3 ${userData.twitterUser == '' ? 'hidden' : ''}`}>
+        <motion.a
+          href={`https://twitter.com/${userData.twitterUser}`}
+          target={'_blank'}
+          whileHover={{ y: -6 }}
+          whileTap={{ scale: 0.9 }}
+          className={`w-6 mx-3 ${userData.twitterUser == '' ? 'hidden' : ''}`}
+        >
           <TwitterIcon />
         </motion.a>
-        <motion.a href={`https://www.instagram.com/${userData.instagramUser}`} target={'_blank'} whileHover={{ y: -6 }} whileTap={{ scale: 0.9 }} className={`w-6 mx-3 ${userData.instagramUser == '' ? 'hidden' : ''}`}>
+        <motion.a
+          href={`https://www.instagram.com/${userData.instagramUser}`}
+          target={'_blank'}
+          whileHover={{ y: -6 }}
+          whileTap={{ scale: 0.9 }}
+          className={`w-6 mx-3 ${userData.instagramUser == '' ? 'hidden' : ''}`}
+        >
           <InstaIcon />
         </motion.a>
-        <motion.a href={`https://wa.me/${userData.whatsappNumber}`} target={'_blank'} whileHover={{ y: -6 }} whileTap={{ scale: 0.9 }} className={`w-6 mx-3 ${userData.whatsappNumber == '' ? 'hidden' : ''}`}>
+        <motion.a
+          href={`https://wa.me/${userData.whatsappNumber}`}
+          target={'_blank'}
+          whileHover={{ y: -6 }}
+          whileTap={{ scale: 0.9 }}
+          className={`w-6 mx-3 ${userData.whatsappNumber == '' ? 'hidden' : ''}`}
+        >
           <WhatsappIcon />
         </motion.a>
       </nav>
