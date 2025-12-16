@@ -4,11 +4,12 @@ import Logo from './Logo';
 import { useRouter } from 'next/router';
 import { GithubIcon, InstaIcon, LinkedInIcon, TwitterIcon, WhatsappIcon } from './Icons';
 import { motion } from 'framer-motion';
+import { userData } from '@/utils/userData';
 
 const CustomLink = ({ href, title, className }) => {
   const router = useRouter();
   const routerPath = router.asPath;
-  console.log(routerPath);
+  // console.log(routerPath);
 
   return (
     <Link href={href} className={`${className} relative group`}>
@@ -36,24 +37,24 @@ const NavBar = () => {
       </nav>
       <nav className="flex items-center justify-center flex-wrap">
         <motion.a
-          href="https://www.linkedin.com/in/fernando-henrique-sousa-teixeira/"
+          href={`https://www.linkedin.com/in/${userData.linkedinUser}`}
           target={'_blank'}
           whileHover={{ y: -6 }}
           whileTap={{ scale: 0.9 }}
-          className="w-6 mr-3"
+          className={`w-6 mx-3 ${userData.linkedinUser == '' ? 'hidden' : ''}`}
         >
           <LinkedInIcon />
         </motion.a>
-        <motion.a href="https://github.com/marlobrado" target={'_blank'} whileHover={{ y: -6 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3">
+        <motion.a href={`https://github.com/${userData.gitHubUsername}`} target={'_blank'} whileHover={{ y: -6 }} whileTap={{ scale: 0.9 }} className={`w-6 mx-3 ${userData.gitHubUsername == '' ? 'hidden' : ''}`}>
           <GithubIcon />
         </motion.a>
-        <motion.a href="https://twitter.com/" target={'_blank'} whileHover={{ y: -6 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3">
+        <motion.a href={`https://twitter.com/${userData.twitterUser}`} target={'_blank'} whileHover={{ y: -6 }} whileTap={{ scale: 0.9 }}  className={`w-6 mx-3 ${userData.twitterUser == '' ? 'hidden' : ''}`}>
           <TwitterIcon />
         </motion.a>
-        <motion.a href="https://www.instagram.com/" target={'_blank'} whileHover={{ y: -6 }} whileTap={{ scale: 0.9 }} className="w-6 mx-3">
+        <motion.a href={`https://www.instagram.com/${userData.instagramUser}`} target={'_blank'} whileHover={{ y: -6 }} whileTap={{ scale: 0.9 }} className={`w-6 mx-3 ${userData.instagramUser == '' ? 'hidden' : ''}`}>
           <InstaIcon />
         </motion.a>
-        <motion.a href="https://wa.me/+5562981540735" target={'_blank'} whileHover={{ y: -6 }} whileTap={{ scale: 0.9 }} className="w-6 ml-3">
+        <motion.a href={`https://wa.me/${userData.whatsappNumber}`} target={'_blank'} whileHover={{ y: -6 }} whileTap={{ scale: 0.9 }} className={`w-6 mx-3 ${userData.whatsappNumber == '' ? 'hidden' : ''}`}>
           <WhatsappIcon />
         </motion.a>
       </nav>

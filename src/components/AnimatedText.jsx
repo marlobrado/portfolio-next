@@ -3,27 +3,27 @@ import { motion } from 'framer-motion';
 
 const quote = {
   initial: {
-    opacity: 1,
+    opacity: 1, // Começa visível
   },
   animate: {
     opacity: 1,
     transition: {
-      delay: 0.5,
-      staggerChildren: 0.1, //velocidade com que cada palavra aparece
+      delay: 0.5, // Espera 0.5s antes de começar
+      staggerChildren: 0.3, // IMPORTANTE: Anima cada palavra com 0.3s de diferença
     },
   },
 };
 
 const singleWord = {
   initial: {
-    opacity: 0,
-    y: 50,
+    opacity: 0, // Invisível
+    y: 50, // 50px abaixo da posição final
   },
   animate: {
-    opacity: 1,
-    y: 0,
+    opacity: 1, // Fica visível
+    y: 0, // Sobe para posição normal
     transition: {
-      duration: 1,
+      duration: 1, // Leva 1 segundo para completar
     },
   },
 };

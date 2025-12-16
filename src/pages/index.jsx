@@ -5,6 +5,8 @@ import profilePic from '../../public/images/profile/developer-pic-1.png';
 import AnimatedText from '@/components/AnimatedText';
 import Link from 'next/link';
 import { LinkArrow } from '@/components/Icons';
+import HireMe from '@/components/HireMe';
+import { userData } from '@/utils/userData';
 
 export default function Home() {
   return (
@@ -22,10 +24,9 @@ export default function Home() {
               <Image src={profilePic} alt="CodeBucks" className="w-full h-auto" />
             </div>
             <div className="w-1/2 flex flex-col items-center self-center">
-              <AnimatedText text="Turning Vision Into Reality With Code And Design." className="!text-6xl !text-left" />
+              <AnimatedText text={userData.animatedText} className="!text-6xl !text-left" />
               <p className="my-4 text-base font-medium">
-                As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects and articles,
-                showcasing my expertise in React.js and web development.
+                {userData.homeSubtitle}
               </p>
               <div className="flex items-center self-start mt-2">
                 <Link
@@ -43,6 +44,7 @@ export default function Home() {
             </div>
           </div>
         </Layout>
+        <HireMe />
       </main>
     </>
   );

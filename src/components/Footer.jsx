@@ -9,11 +9,11 @@ const Footer = () => {
         <span>{new Date().getFullYear()} &copy; All Rights Reserved</span>
         <div className="flex items-center">
           Build With <span className=" text-primary text-2xl px-1">&#9825;</span> by&nbsp;
-          <Link href="/" className="underline underline-offset-2" target="_blank">
+          <Link href="https://www.linkedin.com/in/fernando-henrique-sousa-teixeira/" className="underline underline-offset-2" target="_blank">
             Fernando Henrique
           </Link>
         </div>
-        <Link href="/" className="underline underline-offset-2" target="_blank">
+        <Link href="mailto:fernandogynbsb@gmail.com" className="underline underline-offset-2" target="_blank">
           Say Hello
         </Link>
       </Layout>
