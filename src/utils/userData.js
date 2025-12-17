@@ -72,13 +72,13 @@ export const userData = {
       type: 'Bachelor of Business Administration',
       time: 'Aug 2015 - Feb 2020',
       place: 'PUC/GO',
-      info: 'Solid foundation in business management, finance, and strategic planning.',
+      info: 'Solid foundation in business strategies and finance. Served as a Teaching Assistant for Financial Mathematics, developing strong analytical skills and a data-driven mindset ideal for problem-solving.',
     },
     {
       type: 'Academic Exchange Program (Business)',
       time: 'Jan 2017 - Jul 2017',
       place: 'University of Coimbra (Portugal)',
-      info: 'International academic experience focusing on business administration and economics.',
+      info: 'Six-month international mobility program. Broadened perspectives on global business practices and economics while developing strong adaptability and cross-cultural communication skills in a diverse academic environment.',
     },
   ],
   homeSubtitle:
