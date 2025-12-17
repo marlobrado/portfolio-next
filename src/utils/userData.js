@@ -1,3 +1,5 @@
+import { animate } from "framer-motion";
+
 export const userData = {
   gitHubUsername: 'marlobrado',
   linkedinUser: 'fernando-henrique-sousa-teixeira',
@@ -8,6 +10,7 @@ export const userData = {
   timeHireMe: '10s', // Duration for HireMe spin animation
   animatedText: 'Turning Vision Into Reality With Code And Design.', // Text for AnimatedText component aquele que desce no F5
   animatedTextAbout: 'Bridging Tech & Business!', // Text for AnimatedText component in About page
+  animatedTextProjects: 'Crafting Code, Designing Dreams.', // Text for AnimatedText component in Projects page
   aboutParagraph: [
     'I am a passionate Frontend Developer specializing in the Shopify ecosystem, currently transforming e-commerce ideas into high-performance digital realities at Shakers Agency. My focus is on crafting seamless user experiences using Liquid, JavaScript, and TypeScript, ensuring that every store I build is not only visually stunning but also optimized for conversion and usability.',
     "With a solid Full Stack background and expertise in modern frameworks like React, Next.js, and Node.js, I bring a technical depth that goes beyond standard theming. Whether it's developing custom storefronts or integrating complex backend logic, I apply agile methodologies like Scrum and Kanban to deliver efficient, scalable, and innovative solutions.",
