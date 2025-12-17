@@ -1,4 +1,4 @@
-import { animate } from "framer-motion";
+import { animate } from 'framer-motion';
 
 export const userData = {
   gitHubUsername: 'marlobrado',

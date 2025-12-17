@@ -17,15 +17,18 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
       <div>
         <span>{type}</span>
         <Link href={link} target="_blank">
-        <h2>{title}</h2>
+          <h2>{title}</h2>
         </Link>
         <p>{summary}</p>
         <div>
-          <Link href={github} target="_blank"><GithubIcon/></Link>
-          <Link href={link} target="_blank">Visit Project</Link>
+          <Link href={github} target="_blank">
+            <GithubIcon />
+          </Link>
+          <Link href={link} target="_blank">
+            Visit Project
+          </Link>
         </div>
       </div>
-
     </article>
   );
 };
