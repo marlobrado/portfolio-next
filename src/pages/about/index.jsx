@@ -8,6 +8,7 @@ import aboutImage from '../../../public/images/profile/eu_de_terno.png';
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
 import Skills from '@/components/Skills';
 import Experience from '@/components/Experience';
+import Education from '@/components/Education';
 
 const AnimatedNumber = ({ value }) => {
   const ref = useRef(null);
@@ -69,6 +70,7 @@ const About = () => {
           </div>
           <Skills />
           <Experience />
+          <Education/>
         </Layout>
       </main>
     </>

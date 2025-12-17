@@ -55,6 +55,32 @@ export const userData = {
       work: "Responsible for collecting, organizing, and analyzing data for strategic decisions. Created and maintained dashboards using Power BI and manipulated complex databases using Python's Pandas library.",
     },
   ],
+  education: [
+    {
+      type: 'Systems Analysis and Development',
+      time: 'Aug 2023 - Jan 2026',
+      place: 'IPOG',
+      info: 'Focusing on modern software architecture, systems analysis, and advanced development practices.',
+    },
+    {
+      type: 'Full Stack Web Development',
+      time: 'Mar 2022 - Mar 2023',
+      place: 'Kenzie Academy Brasil',
+      info: 'Intensive 2,000-hour program covering Front-end (React, Next.js, Redux) and Back-end (Node.js, Python, SQL) technologies.',
+    },
+    {
+      type: 'Bachelor of Business Administration',
+      time: 'Aug 2015 - Feb 2020',
+      place: 'PUC/GO',
+      info: 'Solid foundation in business management, finance, and strategic planning.',
+    },
+    {
+      type: 'Academic Exchange Program (Business)',
+      time: 'Jan 2017 - Jul 2017',
+      place: 'University of Coimbra (Portugal)',
+      info: 'International academic experience focusing on business administration and economics.',
+    },
+  ],
   homeSubtitle:
     'As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects and articles, showcasing my expertise in React.js and web development.', // Subtitle on home page
   logoAnimationDuration: 10, // Duration for Logo animation in seconds
