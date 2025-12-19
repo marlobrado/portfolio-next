@@ -41,20 +41,20 @@ const About = () => {
         <meta name="description" content="Created by Fernando" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className="flex w-full flex-col items-center justify-center">
+      <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
           <AnimatedText text={userData.animatedTextAbout} className={'mb-16'} />
           <div className="grid w-full grid-cols-8 gap-16">
             <div className="col-span-3 flex flex-col items-start justify-start">
-              <h2 className="mb-4 text-lg font-bold uppercase text-dark/75">Biography</h2>
+              <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">Biography</h2>
               {userData.aboutParagraph.map((paragraph, index) => (
                 <p key={index} className="mb-4 font-medium">
                   {paragraph}
                 </p>
               ))}
             </div>
-            <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8">
-              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" />
+            <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark dark:border-light bg-light dark:bg-dark p-8">
+              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" />
               <Image src={aboutImage} alt="Fernando Henrique" className="w-full h-auto rounded-2xl" />
             </div>
             <div className={`col-span-2 flex flex-col items-end justify-between ${!userData.showSatisfactionClients && 'hidden'}`}>
@@ -63,7 +63,7 @@ const About = () => {
                   <span className="inline-block text-7xl font-bold">
                     <AnimatedNumber value={stat.count} />+
                   </span>
-                  <h2 className="text-xl font-medium capitalize text-dark/75">{stat.label[stat.count > 1 ? 1 : 0]}</h2>
+                  <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">{stat.label[stat.count > 1 ? 1 : 0]}</h2>
                 </div>
               ))}
             </div>
