@@ -11,7 +11,6 @@ import { motion, useMotionValue } from 'framer-motion';
 const FramerImage = motion(Image);
 
 const MovingImg = ({ img, title, link }) => {
-  
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const imgRef = useRef(null);
@@ -30,14 +29,27 @@ const MovingImg = ({ img, title, link }) => {
   return (
     <Link href={link} target="_blank" onMouseMove={handleMouse} onMouseLeave={handleMouseLeave}>
       <h2 className="capitalize text-xl font-semibold hover:underline">{title}</h2>
-      <FramerImage style={{x:x, y:y}} ref={imgRef} src={img} alt={title} className="w-96 h-auto hidden absolute rounded-lg z-10" initial={{opacity:0}} whileInView={{opacity:1, transition:{duration: 1}}}/>
+      <FramerImage
+        style={{ x: x, y: y }}
+        ref={imgRef}
+        src={img}
+        alt={title}
+        className="w-96 h-auto hidden absolute rounded-lg z-10"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { duration: 1 } }}
+      />
     </Link>
   );
 };
 
 const Article = ({ img, title, date, link }) => {
   return (
-    <motion.li initial={{y:200}} whileInView={{y:0, transition:{duration:0.5, ease:"easeInOut"}}} viewport={{ once: true }} className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark border border-solid border-dark first:mt-0 border-r-4 border-b-4">
+    <motion.li
+      initial={{ y: 200 }}
+      whileInView={{ y: 0, transition: { duration: 0.5, ease: 'easeInOut' } }}
+      viewport={{ once: true }}
+      className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark border border-solid border-dark first:mt-0 border-r-4 border-b-4"
+    >
       <MovingImg img={img} title={title} link={link} />
       <span className="text-primary font-semibold pç-4">{date}</span>
     </motion.li>

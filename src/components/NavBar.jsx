@@ -28,8 +28,7 @@ const CustomLink = ({ href, title, className }) => {
 };
 
 const NavBar = () => {
-
-const [mode, setMode] = useThemeSwitcher();
+  const [mode, setMode] = useThemeSwitcher();
 
   return (
     <header className="w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light">
@@ -85,9 +84,11 @@ const [mode, setMode] = useThemeSwitcher();
         >
           <WhatsappIcon />
         </motion.a>
-        <button onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')} className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
-          {mode === 'dark' ? <SunIcon className={'fill-dark'} /> : <MoonIcon className={'fill-dark'}/>}
-
+        <button
+          onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
+          className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'}`}
+        >
+          {mode === 'dark' ? <SunIcon className={'fill-dark'} /> : <MoonIcon className={'fill-dark'} />}
         </button>
       </nav>
       <div className="absolute left-[50%] top-2 translate-x-[-50%]">
