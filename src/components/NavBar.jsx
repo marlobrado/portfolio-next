@@ -59,7 +59,7 @@ const NavBar = () => {
         ></span>
       </button>
 
-      <div className='w-full flex justify-between items-center lg:hidden'>
+      <div className="w-full flex justify-between items-center lg:hidden">
         {/* desktop view */}
         <nav>
           <CustomLink href="/" title="Home" className="mr-4" />
@@ -122,7 +122,7 @@ const NavBar = () => {
         </nav>
       </div>
 
-      <div className='min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+      <div className="min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         {/* mobile view */}
         <nav>
           <CustomLink href="/" title="Home" className="mr-4" />

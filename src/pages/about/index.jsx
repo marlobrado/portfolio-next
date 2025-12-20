@@ -55,7 +55,11 @@ const About = () => {
             </div>
             <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark dark:border-light bg-light dark:bg-dark p-8">
               <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" />
-              <Image src={aboutImage} alt="Fernando Henrique" className="w-full h-auto rounded-2xl priority sizes='(max-width: 768px) 100,vw (max-width: 1200px) 50vw, 33vw" />
+              <Image
+                src={aboutImage}
+                alt="Fernando Henrique"
+                className="w-full h-auto rounded-2xl priority sizes='(max-width: 768px) 100,vw (max-width: 1200px) 50vw, 33vw"
+              />
             </div>
             <div className={`col-span-2 flex flex-col items-end justify-between ${!userData.showSatisfactionClients && 'hidden'}`}>
               {userData.satisfactionClients.map((stat, index) => (
