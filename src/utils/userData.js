@@ -6,7 +6,7 @@ export const userData = {
   instagramUser: 'fernandohstt',
   whatsappNumber: '+5562981540735',
   emailUser: 'fernandogynbsb@gmail.com',
-  twitterUser: '',
+  twitterUser: 'fsefesf',
   timeHireMe: '10s', // Duration for HireMe spin animation
   animatedText: 'Turning Vision Into Reality With Code And Design.', // Text for AnimatedText component aquele que desce no F5
   animatedTextAbout: 'Bridging Tech & Business!', // Text for AnimatedText component in About page
