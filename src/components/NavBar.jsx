@@ -27,6 +27,31 @@ const CustomLink = ({ href, title, className }) => {
   );
 };
 
+const CustomMobileLink = ({ href, title, className = '', toggle }) => {
+  const router = useRouter();
+  const routerPath = router.asPath;
+  // console.log(routerPath);
+
+  const hendleClick = () => {
+    toggle();
+    router.push(href);
+  };
+
+  return (
+    <button href={href} className={`${className} relative group text-light dark:text-dark my-2`} onClick={hendleClick}>
+      {title}
+
+      <span
+        className={`h-[2px] inline-block bg-light absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-500 dark:bg-dark ${
+          routerPath === href ? 'w-full' : 'w-0'
+        }`}
+      >
+        &nbsp;
+      </span>
+    </button>
+  );
+};
+
 const NavBar = () => {
   const [mode, setMode] = useThemeSwitcher();
   const [isOpen, setIsOpen] = useState(false);
@@ -122,68 +147,70 @@ const NavBar = () => {
         </nav>
       </div>
 
-      <div className="min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        {/* mobile view */}
-        <nav>
-          <CustomLink href="/" title="Home" className="mr-4" />
-          <CustomLink href="/about" title="About" className="mx-4" />
-          <CustomLink href="/projects" title="Projects" className="mx-4" />
-          <CustomLink href="/articles" title="Articles" className="ml-4" />
-        </nav>
-        <nav className="flex items-center justify-center flex-wrap">
-          <motion.a
-            href={`https://www.linkedin.com/in/${userData.linkedinUser}`}
-            target={'_blank'}
-            whileHover={{ y: -6 }}
-            whileTap={{ scale: 0.9 }}
-            className={`w-6 mx-3 ${userData.linkedinUser == '' ? 'hidden' : ''}`}
-          >
-            <LinkedInIcon />
-          </motion.a>
-          <motion.a
-            href={`https://github.com/${userData.gitHubUsername}`}
-            target={'_blank'}
-            whileHover={{ y: -6 }}
-            whileTap={{ scale: 0.9 }}
-            className={`w-6 mx-3 ${userData.gitHubUsername == '' ? 'hidden' : ''}`}
-          >
-            <GithubIcon />
-          </motion.a>
-          <motion.a
-            href={`https://twitter.com/${userData.twitterUser}`}
-            target={'_blank'}
-            whileHover={{ y: -6 }}
-            whileTap={{ scale: 0.9 }}
-            className={`w-6 mx-3 ${userData.twitterUser == '' ? 'hidden' : ''}`}
-          >
-            <TwitterIcon />
-          </motion.a>
-          <motion.a
-            href={`https://www.instagram.com/${userData.instagramUser}`}
-            target={'_blank'}
-            whileHover={{ y: -6 }}
-            whileTap={{ scale: 0.9 }}
-            className={`w-6 mx-3 ${userData.instagramUser == '' ? 'hidden' : ''}`}
-          >
-            <InstaIcon />
-          </motion.a>
-          <motion.a
-            href={`https://wa.me/${userData.whatsappNumber}`}
-            target={'_blank'}
-            whileHover={{ y: -6 }}
-            whileTap={{ scale: 0.9 }}
-            className={`w-6 mx-3 ${userData.whatsappNumber == '' ? 'hidden' : ''}`}
-          >
-            <WhatsappIcon />
-          </motion.a>
-          <button
-            onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
-            className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'}`}
-          >
-            {mode === 'dark' ? <SunIcon className={'fill-dark'} /> : <MoonIcon className={'fill-dark'} />}
-          </button>
-        </nav>
-      </div>
+      {isOpen && (
+        <div className="min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 backdrop-blur-md py-32 rounded-lg">
+          {/* mobile view */}
+          <nav className="flex items-center flex-col justify-center">
+            <CustomMobileLink href="/" title="Home" className="" toggle={handleClick} />
+            <CustomMobileLink href="/about" title="About" className="" toggle={handleClick} />
+            <CustomMobileLink href="/projects" title="Projects" className="" toggle={handleClick} />
+            <CustomMobileLink href="/articles" title="Articles" className="" toggle={handleClick} />
+          </nav>
+          <nav className="flex items-center justify-center flex-wrap mt-2">
+            <motion.a
+              href={`https://www.linkedin.com/in/${userData.linkedinUser}`}
+              target={'_blank'}
+              whileHover={{ y: -6 }}
+              whileTap={{ scale: 0.9 }}
+              className={`w-6 mx-3 ${userData.linkedinUser == '' ? 'hidden' : ''}`}
+            >
+              <LinkedInIcon />
+            </motion.a>
+            <motion.a
+              href={`https://github.com/${userData.gitHubUsername}`}
+              target={'_blank'}
+              whileHover={{ y: -6 }}
+              whileTap={{ scale: 0.9 }}
+              className={`w-6 mx-3 bg-light dark:bg-dark rounded-full ${userData.gitHubUsername == '' ? 'hidden' : ''}`}
+            >
+              <GithubIcon />
+            </motion.a>
+            <motion.a
+              href={`https://twitter.com/${userData.twitterUser}`}
+              target={'_blank'}
+              whileHover={{ y: -6 }}
+              whileTap={{ scale: 0.9 }}
+              className={`w-6 mx-3 ${userData.twitterUser == '' ? 'hidden' : ''}`}
+            >
+              <TwitterIcon />
+            </motion.a>
+            <motion.a
+              href={`https://www.instagram.com/${userData.instagramUser}`}
+              target={'_blank'}
+              whileHover={{ y: -6 }}
+              whileTap={{ scale: 0.9 }}
+              className={`w-6 mx-3 ${userData.instagramUser == '' ? 'hidden' : ''}`}
+            >
+              <InstaIcon />
+            </motion.a>
+            <motion.a
+              href={`https://wa.me/${userData.whatsappNumber}`}
+              target={'_blank'}
+              whileHover={{ y: -6 }}
+              whileTap={{ scale: 0.9 }}
+              className={`w-6 mx-3 ${userData.whatsappNumber == '' ? 'hidden' : ''}`}
+            >
+              <WhatsappIcon />
+            </motion.a>
+            <button
+              onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
+              className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'}`}
+            >
+              {mode === 'dark' ? <SunIcon className={'fill-dark'} /> : <MoonIcon className={'fill-dark'} />}
+            </button>
+          </nav>
+        </div>
+      )}
 
       <div className="absolute left-[50%] top-2 translate-x-[-50%]">
         <Logo />
