@@ -43,7 +43,7 @@ const About = () => {
       </Head>
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
-          <AnimatedText text={userData.animatedTextAbout} className='mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8' />
+          <AnimatedText text={userData.animatedTextAbout} className="mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8" />
           <div className="grid w-full grid-cols-8 gap-16">
             <div className="col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8">
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">Biography</h2>
@@ -61,13 +61,17 @@ const About = () => {
                 className="w-full h-auto rounded-2xl priority sizes='(max-width: 768px) 100,vw (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-            <div className={`col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3 ${!userData.showSatisfactionClients && 'hidden'}`}>
+            <div
+              className={`col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3 ${!userData.showSatisfactionClients && 'hidden'}`}
+            >
               {userData.satisfactionClients.map((stat, index) => (
                 <div key={index} className="flex flex-col items-end justify-center xl:items-center">
                   <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
                     <AnimatedNumber value={stat.count} />+
                   </span>
-                  <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm">{stat.label[stat.count > 1 ? 1 : 0]}</h2>
+                  <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm">
+                    {stat.label[stat.count > 1 ? 1 : 0]}
+                  </h2>
                 </div>
               ))}
             </div>
